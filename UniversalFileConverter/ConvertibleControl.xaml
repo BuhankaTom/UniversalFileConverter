@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="UniversalFileConverter.ConvertibleControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UniversalFileConverter"
+             mc:Ignorable="d" 
+             d:DesignHeight="75" d:DesignWidth="450" Background="LightGray" Margin="8">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="Icon" Width="64" Height="64" Grid.Column="0"/>
+        <StackPanel Grid.Column="1">
+            <Label x:Name="FileName" VerticalAlignment="Center" FontSize="24" />
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="OutputFormatBox" Width="60" Height="20" SelectionChanged="OutputFormatBox_SelectionChanged"
+                          VerticalAlignment="Bottom" Margin="4" HorizontalAlignment="Left"
+                          ToolTip="New file format. Hold shift to set it for all files of the same type."/>
+                <CheckBox x:Name="ReplaceFileBox" Visibility="Hidden" VerticalAlignment="Center"
+                          ToolTip="Hold shift to set it for all files." Click="ReplaceFileBox_Click" >Replace if exists</CheckBox>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="ChangeDirectoryButton" HorizontalAlignment="Right" Width="32" Height="32" Margin="4" Style="{StaticResource GrayButton}" 
+                Grid.Column="2" Click="ChangeDirectoryButton_Click" ToolTip="Change the path of the converted file">
+            <Image Source="Graphics/change_directory.png" Width="32"/>
+        </Button>
+        <Button HorizontalAlignment="Right" Width="32" Height="32" Margin="4" Style="{StaticResource GrayButton}" 
+                Grid.Column="3" Click="RemoveButton_Click" ToolTip="Remove file from list">
+            <Image Source="Graphics/file_remove.png" Width="32"/>
+        </Button>
+    </Grid>
+</UserControl>

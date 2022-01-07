@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Graphics\back.png" />
+    <None Remove="Graphics\change_directory.png" />
+    <None Remove="Graphics\file_audio.png" />
+    <None Remove="Graphics\file_converting.png" />
+    <None Remove="Graphics\file_done.png" />
+    <None Remove="Graphics\file_error.png" />
+    <None Remove="Graphics\file_image.png" />
+    <None Remove="Graphics\file_remove.png" />
+    <None Remove="Graphics\file_unknown.png" />
+    <None Remove="Graphics\file_video.png" />
+    <None Remove="Graphics\load_file.png" />
+    <None Remove="Graphics\start_converting.png" />
+    <None Remove="Graphics\stop_converting.png" />
+    <None Remove="icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Graphics\back.png" />
+    <Resource Include="Graphics\change_directory.png" />
+    <Resource Include="Graphics\file_done.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Graphics\file_audio.png" />
+    <Resource Include="Graphics\file_error.png" />
+    <Resource Include="Graphics\file_image.png" />
+    <Resource Include="Graphics\file_converting.png" />
+    <Resource Include="Graphics\file_remove.png" />
+    <Resource Include="Graphics\file_unknown.png" />
+    <Resource Include="Graphics\file_video.png" />
+    <Resource Include="Graphics\load_file.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Graphics\start_converting.png" />
+    <Resource Include="Graphics\stop_converting.png" />
+    <Resource Include="icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ffmpeg.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

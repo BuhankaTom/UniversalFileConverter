@@ -1,0 +1,40 @@
+﻿<Window x:Class="UniversalFileConverter.ConvertWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UniversalFileConverter"
+        mc:Ignorable="d"
+        Title="Universal File Converter" Height="450" Width="800" Icon="icon.png" Closed="Window_Closed">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0">
+            <StackPanel x:Name="ConvertiblesStackPanel"/>
+        </ScrollViewer>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="StartOrStopButton" Style="{StaticResource WhiteButton}" 
+                    Grid.Column="0" Click="StartOrStopButton_Click">
+                <Image Source="Graphics/start_converting.png" Width="32"/>
+            </Button>
+            <TextBox x:Name="MaxProcesses" Width="30" Height="20" Text="5"
+                     PreviewTextInput="MaxProcessesValidation" Grid.Column="1"
+                     ToolTip="Maximum number of convertible files at the same time" TextChanged="MaxProcesses_TextChanged"/>
+            <ProgressBar x:Name="ConvertationProgressBar" Grid.Column="2" Margin="4" Height="20"/>
+            <Button x:Name="BackButton" Style="{StaticResource WhiteButton}" 
+                    Grid.Column="3" Click="BackButton_Click">
+                <Image Source="Graphics/back.png" Width="32"/>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
